@@ -13,7 +13,7 @@
         <script src="funcoes.js"></script>
     </head>
     <body>
-        <header><h1>Localização</h1></header>
+        <header><p class="title">Localização</p></header>
        <div class="container">
         <form>
            <div class="row">
@@ -26,6 +26,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
+                <label for="dt">Data</label>
                 <input class="form-control" type="date" id="dt" name="data"><br>
             </div>
         </div>
@@ -42,11 +43,11 @@
         <br>
 
     </form>
-    <button class="btn btn-primary" id="btn-localizacao" >enviar</button>
+    <button class="btn btn-primary" id="btn-localizacao" >enviar</button><br><br><hr><br>
  
     
         <div id="result">
-            <table class="table table-borderless">
+            <table class="table ">
                 <thead>
                     <tr>
                       <th scope="col">País</th>
