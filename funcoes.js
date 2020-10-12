@@ -22,11 +22,9 @@ $(document).ready(function(){
 
     $("#btn-localizacao").click(function(){
         var usuario = $("#users").val()
-      
+      var tbl_loc = '';
     $.each( data.locations, function( i, location ) {
-       
         if (usuario === location.uid){
-
         tbl_loc += "<tr><td>"+ location.country +"</td><td>"+ location.address +"</td><td>"+ location.altitude +"</td><td>"+ location.latitude +"</td><td>"+ location.longitude +"</td><td>"+ location.accuracy +"</td><td>"+ location.provider +"</td><td>"+ location.timestamp.day +"/"+location.timestamp.month +"/"+location.timestamp.year +"</td><td>"+ location.timestamp.hours +":"+location.timestamp.minutes +"</td></tr>";
     }
     });
