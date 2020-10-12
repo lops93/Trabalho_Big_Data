@@ -13,38 +13,59 @@
         <script src="funcoes.js"></script>
     </head>
     <body>
+        <header><h1>Localização</h1></header>
        <div class="container">
-           <h1>Localização</h1>
+        <form>
            <div class="row">
             <div class="col-md-6">
-                <label for="hora_inicial">Usuário</label>
-                <select  class="form-control" id="users">
+                
+                <label for="users">Usuário</label>
+                <select  class="form-control" id="users" name="user">
                 </select><br>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <input class="form-control" type="date" ><br>
+                <input class="form-control" type="date" id="dt" name="data"><br>
             </div>
         </div>
         <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
         <label for="hora_inicial">Hora Inicial</label>
-        <input class="form-control" type="time" id="hora_inicial">
+        <input class="form-control" type="time" id="hora_inicial" name="hora_inicial">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
         <label for="hora_final">Hora Final</label>
-        <input class="form-control" type="time" id="hora_final">
+        <input class="form-control" type="time" id="hora_final" name="hora_final">
         </div>
         </div>
         <br>
-        <button class="btn btn-primary" id="btn-localizao">Localização</button>
-        </div>
 
+    </form>
+    <button class="btn btn-primary" id="btn-localizacao" >enviar</button>
+ 
+    
         <div id="result">
-            
-
-
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                      <th scope="col">País</th>
+                      <th scope="col">endereço</th>
+                      <th scope="col">altitude</th>
+                      <th scope="col">Latitude</th>
+                      <th scope="col">Longitude</th>
+                      <th scope="col">Acurácia</th>
+                      <th scope="col">Provedor</th>
+                      <th scope="col">Data</th>
+                      <th scope="col">Hora</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbl">
+                  </tbody>
+            </table>
         </div>
+        </div>
+
+
     </body>
 </html>
