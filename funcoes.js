@@ -3,7 +3,7 @@ $(document).ready(function(){
     //*********CARREGAR USUARIOS NO COMBO**************** */
     var option_user = '';
     var tbl_loc = '';
-    
+    var br = ' <img src="plugin/img/br.png" class="br">'
 
       
     $.getJSON('https://raw.githubusercontent.com/hmageste/BigData_FinalAssignment/master/trackme-sample-data.json', function(data, key) {
@@ -22,10 +22,16 @@ $(document).ready(function(){
 
     $("#btn-localizacao").click(function(){
         var usuario = $("#users").val()
+        var dt = new Date($("#dt").val());
+        var dia = dt.getDate() +1;
+        var mes = dt.getMonth() +1;
+        console.log(dia+"/"+mes)
       var tbl_loc = '';
     $.each( data.locations, function( i, location ) {
         if (usuario === location.uid){
-        tbl_loc += "<tr><td>"+ location.country +"</td><td>"+ location.address +"</td><td>"+ location.altitude +"</td><td>"+ location.latitude +"</td><td>"+ location.longitude +"</td><td>"+ location.accuracy +"</td><td>"+ location.provider +"</td><td>"+ location.timestamp.day +"/"+location.timestamp.month +"/"+location.timestamp.year +"</td><td>"+ location.timestamp.hours +":"+location.timestamp.minutes +"</td></tr>";
+            location.timestamp.month = location.timestamp.month +1
+            location.timestamp.year = location.timestamp.year -100
+        tbl_loc += "<tr><td>"+br+""+ location.country +"</td><td>"+ location.address +"</td><td>"+ location.altitude +"</td><td>"+ location.latitude +"</td><td>"+ location.longitude +"</td><td>"+ location.accuracy +"</td><td>"+ location.provider +"</td><td>"+ location.timestamp.day +"/"+location.timestamp.month +"/"+location.timestamp.year +"</td><td>"+ location.timestamp.hours +":"+location.timestamp.minutes +"</td></tr>";
     }
     });
 
